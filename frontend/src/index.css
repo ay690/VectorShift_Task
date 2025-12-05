@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the pipeline builder */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.app-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+}
+
+/* React Flow custom styles */
+.react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow__edge-path {
+  stroke: #6366f1;
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #4f46e5;
+  stroke-width: 3;
+}
+
+.react-flow__handle {
+  background: #6366f1;
+  border: 2px solid #ffffff;
+  width: 8px;
+  height: 8px;
+}
+
+.react-flow__handle.react-flow__handle-top {
+  top: -4px;
+}
+
+.react-flow__handle.react-flow__handle-bottom {
+  bottom: -4px;
+}
+
+.react-flow__handle.react-flow__handle-left {
+  left: -4px;
+}
+
+.react-flow__handle.react-flow__handle-right {
+  right: -4px;
+}
+
+.react-flow__handle.react-flow__handle-connecting {
+  background: #ef4444;
+}
+
+.react-flow__handle.react-flow__handle-valid {
+  background: #10b981;
+}
+
+/* Toolbar styles */
+.toolbar {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border-bottom: 1px solid #475569;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar-button {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.toolbar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.toolbar-button:active {
+  transform: translateY(0);
+}
+
+/* Submit button */
+.submit-container {
+  padding: 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Node styles */
+.base-node {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.base-node:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.base-node.selected {
+  box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Canvas area */
+.canvas-container {
+  height: 600px;
+  background: #f1f5f9;
+  background-image: 
+    radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
