@@ -68,7 +68,7 @@ export const TextNode = ({ id, data }) => {
   return (
     <div 
       ref={nodeRef}
-      className="relative bg-white rounded-lg border border-blue-100 shadow-sm overflow-hidden transition-all duration-200"
+      className="relative overflow-hidden transition-all duration-200 bg-white border border-blue-100 rounded-lg shadow-sm"
       style={{
         minWidth: '200px',
         minHeight: '80px',
@@ -78,8 +78,8 @@ export const TextNode = ({ id, data }) => {
       {/* Node Header */}
       <div className="px-3 pt-2 pb-1 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
         <div className="flex items-center">
-          <div className="w-5 h-5 rounded bg-blue-100 flex items-center justify-center mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex items-center justify-center w-5 h-5 mr-2 bg-blue-100 rounded">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
           </div>
@@ -93,8 +93,8 @@ export const TextNode = ({ id, data }) => {
           key={`${id}-${variable}-${index}`}
           type="target"
           position={Position.Left}
-          id={`${id}-${variable}`}
-          className="w-2.5 h-2.5 bg-blue-500 border-2 border-white"
+          id={variable}
+          className="w-4 h-4 bg-blue-500 border-2 border-white hover:w-5 hover:h-5 transition-all duration-200"
           style={{
             top: getHandlePosition(index),
             zIndex: 10
@@ -109,7 +109,7 @@ export const TextNode = ({ id, data }) => {
             ref={textareaRef}
             value={currText}
             onChange={handleTextChange}
-            className="w-full p-2 text-sm border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none overflow-hidden bg-white/80"
+            className="w-full p-2 overflow-hidden text-sm border border-gray-200 rounded-md resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80"
             style={{
               minHeight: '40px',
               lineHeight: '1.4',
@@ -121,7 +121,7 @@ export const TextNode = ({ id, data }) => {
           
           {/* Variable indicators */}
           {variables.length > 0 && (
-            <div className="absolute -top-5 left-0 right-0 flex flex-wrap gap-1 mb-1">
+            <div className="absolute left-0 right-0 flex flex-wrap gap-1 mb-1 -top-5">
               {variables.map((variable, index) => (
                 <span 
                   key={`var-${index}`}
@@ -143,7 +143,7 @@ export const TextNode = ({ id, data }) => {
         type="source"
         position={Position.Right}
         id={`${id}-output`}
-        className="w-2.5 h-2.5 bg-green-500 border-2 border-white"
+        className="w-4 h-4 bg-green-500 border-2 border-white hover:w-5 hover:h-5 transition-all duration-200"
         style={{
           top: variables.length > 0 ? getHandlePosition(variables.length) : '50%',
           zIndex: 10
